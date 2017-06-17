@@ -1,5 +1,8 @@
 # AppTemplateOfReactNative
 
+## 说明
+这个模版暂时来说，已经算是react-native开发的最佳实践
+
 ## 技术栈
 - react
 - react-native
