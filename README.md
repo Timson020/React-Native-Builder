@@ -1,4 +1,4 @@
-# AppTemplateOfReactNative
+# App-Template-Of-ReactNative
 
 ## 说明
 这个模版暂时来说，已经算是react-native开发的最佳实践
