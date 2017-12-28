@@ -24,7 +24,7 @@ export default class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-	title: PropTypes.string.isRequired
+	title: PropTypes.string.isRequired,
 }
 
 const styles = StyleSheet.create({
@@ -44,5 +44,5 @@ const styles = StyleSheet.create({
 	navBarText: {
 		fontSize: 20,
 		color: 'white',
-	}
+	},
 })

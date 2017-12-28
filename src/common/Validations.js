@@ -6,4 +6,5 @@ function realname(value = '') {
 const Validation = {
 	realname,
 }
+
 export default Validation

@@ -12,8 +12,8 @@ export default class TabIcon extends Component {
 	render() {
 		return (
 			<View style={[styles.container]}>
-				<Icon name={this.props.iconName} size={this.props.iconSize} color={this.props.selected ? this.props.iconSelectColor : this.props.iconColor}/>
-				<Text style={[styles.TabText,{color: this.props.selected ? this.props.iconSelectColor : this.props.iconColor}]}>{this.props.title}</Text>
+				<Icon name={this.props.iconName} size={this.props.iconSize} color={this.props.selected ? this.props.iconSelectColor : this.props.iconColor} />
+				<Text style={[styles.TabText, { color: this.props.selected ? this.props.iconSelectColor : this.props.iconColor }]}>{this.props.title}</Text>
 			</View>
 		)
 	}
@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'center',
 	},
 	TabText: {
-		fontSize: 13
-	}
+		fontSize: 13,
+	},
 })

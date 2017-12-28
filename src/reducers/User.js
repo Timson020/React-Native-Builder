@@ -2,6 +2,7 @@ import { fromJS } from 'immutable'
 import * as ActionTypes from '../common/ActionTypes'
 
 const initialState = fromJS({
+	id: null,
 	realname: null,
 	phone: null,
 	idcard: null,
@@ -12,7 +13,6 @@ const initialState = fromJS({
 
 export default function reducer(state = initialState, action = {}) {
 	switch (action.type) {
-
 	case ActionTypes.RESET_ALL_STATE: {
 		return initialState
 	}

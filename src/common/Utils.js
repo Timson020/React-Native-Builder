@@ -12,6 +12,7 @@ const Utils = {
 	// 屏幕尺寸
 	width: Dimensions.get('window').width,
 	height: Dimensions.get('window').height,
+	// 字体大小Rem
 	fontRem: (Dimensions.get('window').width / 320) * 16,
 }
 
