@@ -1,8 +1,8 @@
+import { AsyncStorage } from 'react-native'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-import { persistStore, autoRehydrate, createTransform } from 'redux-persist'
-import { AsyncStorage } from 'react-native'
+import { createTransform, persistStore, persistReducer } from 'redux-persist'
 import { Iterable, fromJS } from 'immutable'
 import reducers from '../reducers'
 
@@ -27,28 +27,32 @@ const middleware = [
 	logger,
 ]
 
-// 
-const Store = compose(
-	applyMiddleware(...middleware),
-	autoRehydrate()
-)(createStore)(reducers)
-
-
+// immutable 转换
 const immutableTransform = createTransform(
-	state => Iterable.isIterable(state) ? state.toJS() : state,
-	state => JSON.stringify(state) !== '{}' ? fromJS(state) : null
+	(state) => { return Iterable.isIterable(state) ? state.toJS() : state },
+	(state) => { return JSON.stringify(state) !== '{}' ? fromJS(state) : null }
 )
 
-// 
-persistStore(Store, {
+// 持久化reducer
+const reducer = persistReducer({
+	key: 'root',
+	// 版本
+	version: 1,
+	// 白名单
+	whitelist: ['User'],
 	// 异步保存的地方
 	storage: AsyncStorage,
-	// 
-	transforms: [
-		immutableTransform,
-	],
-	// 白名单
-	whitelist: [],
-})
+	// 转换
+	transforms: [immutableTransform],
+
+	throttle: 1000,
+
+	debug: true,
+}, reducers)
+
+// Store导出
+const Store = compose(applyMiddleware(...middleware))(createStore)(reducer)
+
+persistStore(Store)
 
 export default Store

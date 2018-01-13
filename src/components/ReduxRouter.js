@@ -21,8 +21,6 @@ const getSceneStyle = (props, computedProps) => {
 
 
 class ReduxRouter extends Component {
-	componentWillMount() {}
-
 	shouldComponentUpdate() {
 		return false
 	}
@@ -31,11 +29,7 @@ class ReduxRouter extends Component {
 
 	render() {
 		return (
-			<Router
-				{...this.props}
-				hideTabBar
-				getSceneStyle={getSceneStyle}
-			/>
+			<Router {...this.props} getSceneStyle={getSceneStyle} />
 		)
 	}
 }

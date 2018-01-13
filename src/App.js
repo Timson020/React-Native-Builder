@@ -3,7 +3,7 @@ import { View, StatusBar, StyleSheet } from 'react-native'
 
 import { Provider } from 'react-redux'
 
-import { Utils, Store } from './common'
+import { Store } from './common'
 
 import Routes from './routes'
 
@@ -13,10 +13,14 @@ export default class App extends Component {
 		this.state = {}
 	}
 
+	shouldComponentUpdate() {
+		return false
+	}
+
 	render() {
 		return (
 			<View style={[styles.container]}>
-				<StatusBar backgroundColor={Utils.themeColor} barStyle="light-content" />
+				<StatusBar barStyle="light-content" />
 				<Provider store={Store}>
 					<Routes />
 				</Provider>

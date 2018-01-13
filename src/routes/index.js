@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-// import { StyleSheet } from 'react-native'
 import { Scene, Modal } from 'react-native-router-flux'
 
 import { ReduxRouter } from '../components'
-// import { Utils } from '../common'
+
+import Home from './Home'
 
 export default class Routes extends Component {
 	shouldComponentUpdate() {
@@ -14,11 +14,11 @@ export default class Routes extends Component {
 		return (
 			<ReduxRouter>
 				<Scene key="modal" component={Modal}>
-					<Scene key="root" />
+					<Scene key="root">
+						<Scene key="home" title="首页" component={Home} />
+					</Scene>
 				</Scene>
 			</ReduxRouter>
 		)
 	}
 }
-
-// let styles = StyleSheet.create({})

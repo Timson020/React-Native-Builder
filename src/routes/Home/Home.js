@@ -8,7 +8,7 @@ import { Utils } from '../../common'
 import { } from './module'
 import { } from './components'
 
-class Template extends Component {
+class Home extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {}
@@ -25,10 +25,10 @@ const styles = StyleSheet.create({
 	container: {},
 })
 
-Template.propTypes = {
+Home.propTypes = {
 
 }
 
 export default connect(state => ({
 	user: state.User.toJSON(),
-}))(Template)
+}))(Home)
