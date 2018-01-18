@@ -2,12 +2,16 @@
   "name": "Demo",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": ">=8.9.0"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "r": "node ./tools/generator/index.js r",
     "c": "node ./tools/generator/index.js c"
   },
+  "author": "Timson",
   "dependencies": {
     "immutable": "3.8.2",
     "prop-types": "15.6.0",
