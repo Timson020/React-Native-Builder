@@ -2,13 +2,13 @@ import { fromJS } from 'immutable'
 import * as ActionTypes from '../common/ActionTypes'
 
 const initialState = fromJS({
-	id: null,
-	realname: null,
-	phone: null,
-	idcard: null,
-	sex: null,
-	device_id: null,
-	pwd: null,
+	id: '',
+	realname: '',
+	phone: '',
+	idcard: '',
+	sex: '',
+	device_id: '',
+	pwd: '',
 })
 
 export default function reducer(state = initialState, action = {}) {

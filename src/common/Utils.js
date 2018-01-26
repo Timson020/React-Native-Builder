@@ -19,6 +19,9 @@ const Utils = {
 	
 	// 字体大小Rem
 	fontRem: (Dimensions.get('window').width / 320) * 16,
+
+	// 发出请求
+	ajax() {},
 }
 
 export default Utils

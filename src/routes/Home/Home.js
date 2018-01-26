@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { Utils } from '../../common'
+import { BaseComponent } from '../../components'
 
 import { } from './module'
 import { } from './components'
 
-class Home extends Component {
+class Home extends BaseComponent {
 	constructor(props) {
 		super(props)
 		this.state = {}
@@ -22,7 +23,9 @@ class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-	container: {},
+	container: {
+		flex: 1,
+	},
 })
 
 Home.propTypes = {

@@ -19,7 +19,6 @@ const getSceneStyle = (props, computedProps) => {
 	return style
 }
 
-
 class ReduxRouter extends Component {
 	shouldComponentUpdate() {
 		return false
@@ -29,7 +28,7 @@ class ReduxRouter extends Component {
 
 	render() {
 		return (
-			<Router {...this.props} getSceneStyle={getSceneStyle} />
+			<Router {...this.props} getSceneStyle={getSceneStyle} panHandlers={null} />
 		)
 	}
 }
