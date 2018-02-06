@@ -9,7 +9,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "r": "node ./tools/generator/index.js r",
-    "c": "node ./tools/generator/index.js c"
+    "c": "node ./tools/generator/index.js c",
+    "setup": "babel-node ./tools/setup.js"
   },
   "author": "Timson",
   "dependencies": {
