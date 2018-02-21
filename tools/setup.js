@@ -5,10 +5,15 @@ import fs from 'fs'
 // cmd arguments
 const argvs = process.argv
 
+// folder path
+const root_path = __dirname.split('tools')[0]
+const ios_path = `${root_path}ios_back`
+const android_path = `${root_path}android_back`
+
 // file path
-const _path = __dirname.split('tools')[0]
-const ios_path = `${_path}ios_back`
-const android_path = `${_path}android_back`
+// const indexJS = `${root_path}index.js`
+// const packageJSON = `${root_path}package.json`
+// const MD = `${root_path}README.md`
 
 const appName = argvs[2]
 
@@ -37,7 +42,16 @@ function deleteFolder(path) {
 	}
 }
 
-// 开始
+// function for rename the app
+function rename(name, path) {
+	if (fs.existsSync(path)) {
+		fs.readdirSync(path).forEach((file) => {
+			console.info(file)
+		})
+	}
+}
+
+// start
 async function start() {
 	// del the folder
 	const ios = await isPath(ios_path)
@@ -52,7 +66,8 @@ async function start() {
 		deleteFolder(android_path)
 		console.info('android_path is success delete')
 	}
-	console.info(appName)
+
+	rename(appName, root_path)
 }
 
 start()
