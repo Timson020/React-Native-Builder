@@ -46,7 +46,13 @@ function deleteFolder(path) {
 function rename(name, path) {
 	if (fs.existsSync(path)) {
 		fs.readdirSync(path).forEach((file) => {
-			console.info(file)
+			const curPath = `${root_path}/${file}`
+			if (fs.statSync(curPath).isFile()) {
+				const contents = fs.readFileSync(curPath).toString()
+				contents.replace('Demo', name)
+				fs.writeFileSync(contents)
+				console.info('reWrite the ' + file)
+			}
 		})
 	}
 }
