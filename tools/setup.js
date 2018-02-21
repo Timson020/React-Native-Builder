@@ -50,7 +50,7 @@ function rename(name, path) {
 			if (fs.statSync(curPath).isFile()) {
 				const contents = fs.readFileSync(curPath).toString()
 				contents.replace('Demo', name)
-				fs.writeFileSync(contents)
+				fs.writeFileSync(curPath, contents)
 				console.info('reWrite the ' + file)
 			}
 		})
