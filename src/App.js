@@ -3,16 +3,25 @@ import { View, StatusBar, StyleSheet } from 'react-native'
 
 import { Provider } from 'react-redux'
 
-import { Utils, Store } from './common'
+import { Store } from './common'
 
 import Routes from './routes'
 
-export default class SocialBankSupply extends Component {
+export default class App extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {}
+	}
+
+	shouldComponentUpdate() {
+		return false
+	}
+
 	render() {
-		return(
+		return (
 			<View style={[styles.container]}>
-				<StatusBar backgroundColor={ Utils.themeColor } barStyle="light-content" />
-				<Provider store={ Store }>
+				<StatusBar barStyle="light-content" />
+				<Provider store={Store}>
 					<Routes />
 				</Provider>
 			</View>
@@ -22,6 +31,6 @@ export default class SocialBankSupply extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
-	}
+		flex: 1,
+	},
 })

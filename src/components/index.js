@@ -1,9 +1,9 @@
+// 组件开始
 import ReduxRouter from './ReduxRouter'
-import TabIcon from './TabIcon'
-import NavBar from './NavBar'
+import BaseComponent from './BaseComponent'
+// 组件结束
 
 export {
 	ReduxRouter,
-	TabIcon,
-	NavBar,
+	BaseComponent,
 }
