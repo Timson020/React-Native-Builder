@@ -10,8 +10,7 @@
     "test": "jest",
     "r": "node ./tools/generator/index.js r",
     "c": "node ./tools/generator/index.js c",
-    "setup": "rm -fr package-lock.json && rm -fr yarn.lock && babel-node ./tools/setup.js",
-    "rsetup": "rm -fr package-lock.json && rm -fr yarn.lock && rm -fr .git && babel-node ./tools/setup.js"
+    "setup": "rm -fr package-lock.json && rm -fr yarn.lock && rm -fr .git && babel-node ./tools/setup.js"
   },
   "author": "Timson",
   "dependencies": {
