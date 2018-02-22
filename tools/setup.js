@@ -51,7 +51,7 @@ function rename(name, path) {
 				const contents = fs.readFileSync(curPath).toString()
 				const newContents = contents.replace(/Demo/g, name)
 				fs.writeFileSync(curPath, newContents)
-				console.info('reWrite the ' + file)
+				// console.info('reWrite the ' + file)
 			}
 		})
 	}
@@ -73,7 +73,17 @@ async function start() {
 		console.info('android_path is success delete')
 	}
 
+	// file rename
 	rename(appName, root_path)
+	
+	const new_root_path = root_path.replace(/react-native-template-timson/ig, appName)
+	fs.renameSync(`${root_path}`, `${new_root_path}`)
+
+	console.info('complete')
+	// console.info('')
 }
 
-start()
+const new_root_path = root_path.replace(/react-native-template-timson/ig, appName)
+fs.renameSync(`${root_path}`, `${new_root_path}`)
+
+// start()
