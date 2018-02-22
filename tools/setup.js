@@ -7,8 +7,8 @@ const argvs = process.argv
 
 // folder path
 const root_path = __dirname.split('tools')[0]
-const ios_path = `${root_path}ios_back`
-const android_path = `${root_path}android_back`
+const ios_path = `${root_path}ios`
+const android_path = `${root_path}android`
 
 // file path
 // const indexJS = `${root_path}index.js`
@@ -62,6 +62,7 @@ async function start() {
 	// del the folder
 	const ios = await isPath(ios_path)
 	const android = await isPath(android_path)
+	const new_root_path = root_path.replace(/react-native-template-timson/ig, appName)
 	// const androidStats = android.data
 	// const iosStats = ios.data
 	if (ios.code == 200) {
@@ -75,15 +76,16 @@ async function start() {
 
 	// file rename
 	rename(appName, root_path)
-	
-	const new_root_path = root_path.replace(/react-native-template-timson/ig, appName)
+	console.info('file rename is complete')
+
 	fs.renameSync(`${root_path}`, `${new_root_path}`)
 
-	console.info('complete')
-	// console.info('')
+	console.info('success, It is all complete')
+	console.info('please run step on one cmd')
+	console.info(`react-native init ${appName}`)
+	console.info(`mv ./${appName}/ios ./ios`)
+	console.info(`mv ./${appName}/android ./android`)
+	console.info(`please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
 }
 
-const new_root_path = root_path.replace(/react-native-template-timson/ig, appName)
-fs.renameSync(`${root_path}`, `${new_root_path}`)
-
-// start()
+start()
