@@ -24,6 +24,14 @@
 ## 命令
 ```
 	npm start --- 开启服务
-	npm run gen Home --- 构建器，一行命令，自动构建页面模版
 	npm run test --- 开启测试
+	npm run r Home --- 构建器，一行命令，自动构建页面模版
+	npm run c Component --- 构建器，一行命令，自动构建组件模版
+	npm run setup AppName --- 初始化命令
+
+	// please run it after npm run setup AppName
+	mkdir ex && cd ./ex && react-native init AppName
+	mv ./AppName/ios ../ios && mv ./AppName/android ../android && cd ../ && rm -fr ex
+	// please check the ./ex/AppName/package.json, react && react-native version, to modify ./package.json
+
 ```

@@ -67,25 +67,24 @@ async function start() {
 	// const iosStats = ios.data
 	if (ios.code == 200) {
 		deleteFolder(ios_path)
-		console.info('ios_path is success delete')
+		console.info('##### ios_path is success delete #####')
 	}
 	if (android.code == 200) {
 		deleteFolder(android_path)
-		console.info('android_path is success delete')
+		console.info('##### android_path is success delete #####')
 	}
 
 	// file rename
 	rename(appName, root_path)
-	console.info('file rename is complete')
+	console.info('----- file rename is complete -----')
 
 	fs.renameSync(`${root_path}`, `${new_root_path}`)
 
 	console.info('success, It is all complete')
 	console.info('please run step on one cmd')
-	console.info(`react-native init ${appName}`)
-	console.info(`mv ./${appName}/ios ./ios`)
-	console.info(`mv ./${appName}/android ./android`)
-	console.info(`please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
+	console.info(`>>>>>>> mkdir ex && cd ./ex && react-native init ${appName}`)
+	console.info(`>>>>>>> mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd ../ && rm -fr ex`)
+	console.info(`>>>>>>> please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
 }
 
 start()
