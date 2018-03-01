@@ -67,24 +67,25 @@ async function start() {
 	// const iosStats = ios.data
 	if (ios.code == 200) {
 		deleteFolder(ios_path)
-		console.info('##### ios_path is success delete #####')
+		console.info('\x1B[35m', '##### ios_path is success delete #####')
 	}
 	if (android.code == 200) {
 		deleteFolder(android_path)
-		console.info('##### android_path is success delete #####')
+		console.info('\x1B[35m', '##### android_path is success delete #####')
 	}
 
 	// file rename
 	rename(appName, root_path)
-	console.info('----- file rename is complete -----')
+	console.info('\x1B[36m', '----- file rename is complete -----')
 
 	fs.renameSync(`${root_path}`, `${new_root_path}`)
 
-	console.info('success, It is all complete')
-	console.info('please run step on one cmd')
-	console.info(`>>>>>>> mkdir ex && cd ./ex && react-native init ${appName}`)
-	console.info(`>>>>>>> mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd ../ && rm -fr ex`)
-	console.info(`>>>>>>> please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
+	console.info('\x1B[32m', '----- success, It is all complete -----')
+	console.info('\x1B[33m', '***** please run step by step on cmd *****')
+	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `>>>>>>> mkdir ex && cd ./ex && react-native init ${appName}`)
+	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `>>>>>>> mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd ../ && rm -fr ex`)
+	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', '>>>>>>> npm run new')
+	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `!!!!! please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
 }
 
 start()

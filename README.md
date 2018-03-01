@@ -1,7 +1,8 @@
 # App-Template-Of-ReactNative
 
 ## 说明
-这个模版暂时来说，已经算是react-native开发的最佳实践
+react-native开发模版
+> 集成 路由库-react-native-router-flux 图标库-react-native-vector-icons 持续化存储-redux & immutable
 
 ## 技术栈
 - react
@@ -18,7 +19,7 @@
 	- reducers（reducer）
 	- routes（页面）
 	- App.js（入口文件）
-- tools（工具库，目前只有构建器）
+- tools（工具库，目前只有构建器, 和一个初始化命令）
 - .eslintrc（eslint 规范）
 
 ## 命令
@@ -28,10 +29,16 @@
 	npm run r Home --- 构建器，一行命令，自动构建页面模版
 	npm run c Component --- 构建器，一行命令，自动构建组件模版
 	npm run setup AppName --- 初始化命令
-
-	// please run it after npm run setup AppName
-	mkdir ex && cd ./ex && react-native init AppName
-	mv ./AppName/ios ../ios && mv ./AppName/android ../android && cd ../ && rm -fr ex
-	// please check the ./ex/AppName/package.json, react && react-native version, to modify ./package.json
+```
+### 初始化
+>please run it after npm run setup AppName
 
 ```
+	
+	mkdir ex && cd ./ex && react-native init AppName
+	mv ./AppName/ios ../ios && mv ./AppName/android ../android && cd ../ && rm -fr ex
+	npm run new
+	
+```
+
+>please check the ./ex/AppName/package.json, react && react-native version, to modify ./package.json
