@@ -29,8 +29,10 @@ const middleware = [
 
 // immutable 转换
 const immutableTransform = createTransform(
+	// set
 	(state) => { return Iterable.isIterable(state) ? state.toJS() : state },
-	(state) => { return JSON.stringify(state) !== '{}' ? fromJS(state) : null }
+	// get
+	(state) => { return fromJS(state || {}) }
 )
 
 // 持久化reducer

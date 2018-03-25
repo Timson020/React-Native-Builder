@@ -2,6 +2,7 @@ import Utils from './Utils'
 import Store from './Store'
 import Server from './Server'
 import Validations from './Validations'
+import Constants from './Constants'
 import * as ActionTypes from './ActionTypes'
 
 export {
@@ -9,5 +10,6 @@ export {
 	Store,
 	Server,
 	Validations,
+	Constants,
 	ActionTypes,
 }

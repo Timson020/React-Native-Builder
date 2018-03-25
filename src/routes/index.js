@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Scene, Modal } from 'react-native-router-flux'
 
 import { ReduxRouter } from '../components'
-import { Utils } from '../common'
+import { Constants } from '../common'
 
 // 页面开始
 import Home from './Home'
@@ -15,7 +15,7 @@ export default class Routes extends Component {
 
 	render() {
 		const hideBack = { hideBackImage: true, onBack: () => { } }
-		const normalNav = { navigationBarStyle: { backgroundColor: Utils.themeColor, borderBottomWidth: 0, elevation: 0 }, titleStyle: { color: '#fff' } }
+		const normalNav = { navigationBarStyle: { backgroundColor: Constants.themeColor, borderBottomWidth: 0, elevation: 0 }, titleStyle: { color: '#fff' } }
 
 		return (
 			<ReduxRouter>
