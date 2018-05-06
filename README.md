@@ -30,6 +30,76 @@ react-native开发模版
 	npm run c Component --- 构建器，一行命令，自动构建组件模版
 	npm run setup AppName --- 初始化命令
 ```
+
+## IOS打包
+```
+react-native bundle --entry-file index.ios.js --bundle-output ./ios/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false
+```
+
+## Android打包
+
+### 生成签名：
+
+- 输入命令
+```
+keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+```
+
+- my-release-key.keystore文件放到你工程中的android/app文件夹下 
+
+### 一次性修改：
+
+- / android /gradle.properties，添加如下的代码（注意：请把其中的****替代为替换的keystore密码）
+```
+MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
+
+MYAPP_RELEASE_KEY_ALIAS=my-key-alias
+
+MYAPP_RELEASE_STORE_PASSWORD=*****
+
+MYAPP_RELEASE_KEY_PASSWORD=*****
+```
+
+- 编辑你工程目录下的android/app/build.gradle
+```
+...
+android {
+	...
+	defaultConfig { ... }
+	<!-- 拷贝： -->
+	signingConfigs {
+		release {
+			storeFile file(MYAPP_RELEASE_STORE_FILE)
+			storePassword MYAPP_RELEASE_STORE_PASSWORD
+			keyAlias MYAPP_RELEASE_KEY_ALIAS
+			keyPassword MYAPP_RELEASE_KEY_PASSWORD
+		}
+	}
+	buildTypes {
+		release {
+			...
+			<!-- 拷贝： -->
+			signingConfig signingConfigs.release
+		}
+	}
+}
+...
+```
+
+- 在跟目录下，运行指令
+```
+react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+```
+
+### 打包
+
+- 在android 文件夹下运行
+```
+gradlew assembleRelease
+```
+
+- 以上就构建成功，文件放在android/app/build/outputs/apk/下面
+
 ### 初始化
 >please run it after npm run setup AppName
 
