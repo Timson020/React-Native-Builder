@@ -62,7 +62,7 @@ async function start() {
 	// del the folder
 	const ios = await isPath(ios_path)
 	const android = await isPath(android_path)
-	const new_root_path = root_path.replace(/react-native-template-timson/ig, appName)
+	const new_root_path = root_path.replace(/React-Native-Builder/ig, appName)
 	// const androidStats = android.data
 	// const iosStats = ios.data
 	if (ios.code == 200) {
