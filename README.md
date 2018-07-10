@@ -1,8 +1,8 @@
-# App-Template-Of-ReactNative
+# ReactNative-Builder
 
 ## 说明
-react-native开发模版
-> 集成 路由库-react-native-router-flux 图标库-react-native-vector-icons 持续化存储-redux & immutable
+react-native 开发模版
+> 集成 路由库-react-native-router-flux 持续化存储-redux & immutable
 
 ## 技术栈
 - react
@@ -10,7 +10,6 @@ react-native开发模版
 - redux
 - immutable
 - react-native-router-flux
-- react-native第三方原生组件库
 
 ## 简单的目录说明
 - src（源码文件）
