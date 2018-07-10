@@ -10,6 +10,10 @@ import { } from './module'
 import { } from './components'
 
 class Template extends BaseComponent {
+	static propTypes = {
+
+	}
+
 	constructor(props) {
 		super(props)
 		this.state = {}
@@ -27,10 +31,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 })
-
-Template.propTypes = {
-
-}
 
 export default connect(state => ({
 	user: state.User.toJSON(),

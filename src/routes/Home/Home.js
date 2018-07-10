@@ -10,6 +10,10 @@ import { } from './module'
 import { } from './components'
 
 class Home extends BaseComponent {
+	static propTypes = {
+
+	}
+
 	constructor(props) {
 		super(props)
 		this.state = {}
@@ -27,10 +31,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 })
-
-Home.propTypes = {
-
-}
 
 export default connect(state => ({
 	user: state.User.toJSON(),

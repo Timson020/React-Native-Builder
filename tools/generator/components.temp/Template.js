@@ -5,6 +5,10 @@ import PropTypes from 'prop-types'
 import { Utils } from '../../common'
 
 class Template extends Component {
+	static propTypes = {
+
+	}
+
 	constructor(props) {
 		super(props)
 		this.state = {}
@@ -20,9 +24,5 @@ class Template extends Component {
 const styles = StyleSheet.create({
 	container: {},
 })
-
-Template.propTypes = {
-
-}
 
 export default Template
