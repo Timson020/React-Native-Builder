@@ -1,6 +1,5 @@
 import { AsyncStorage } from 'react-native'
 import { createStore, applyMiddleware, compose } from 'redux'
-import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { createTransform, persistStore, persistReducer } from 'redux-persist'
 import { Iterable, fromJS } from 'immutable'
@@ -23,7 +22,6 @@ const logger = createLogger({
 
 // redux的中间件
 const middleware = [
-	thunk,
 	logger,
 ]
 

@@ -1,25 +1,28 @@
-# ReactNative-Builder
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Timson020/React-Native-Builder.git/pulls)
 
-## 说明
-react-native 开发模版
+# ReactNative-Builder
 > 集成 路由库-react-native-router-flux 持续化存储-redux & immutable
 
 ## 技术栈
-- react
-- react-native
-- redux
-- immutable
-- react-native-router-flux
+- [X] react
+- [X] react-native
+- [X] redux
+- [X] immutable
+- [X] react-native-router-flux
 
 ## 简单的目录说明
-- src（源码文件）
-	- common（工具库）
-	- components（项目组件）
-	- reducers（reducer）
-	- routes（页面）
-	- App.js（入口文件）
-- tools（工具库，目前只有构建器, 和一个初始化命令）
-- .eslintrc（eslint 规范）
+
+|跟名称|子名称|说明|
+|:--:|:--:|:--:|
+|src||源码文件|
+||assets|图片|
+||ccommon|工具库|
+||components|项目全局组件|
+||reducers|reducers|
+||routes|页面|
+|tools||命令工具库|
+|.eslintrc||eslint 规范|
+|.eslintrc||babel 解析器|
 
 ## 命令
 ```
@@ -28,14 +31,24 @@ react-native 开发模版
 	npm run r Home --- 构建器，一行命令，自动构建页面模版
 	npm run c Component --- 构建器，一行命令，自动构建组件模版
 	npm run setup AppName --- 初始化命令
+	npm run new --- 保持最新的react && react-native
+	npm run iosBundle --- ios生成bundle
+	npm run androidBundle --- android生成bundle
+	npm run androidBuild --- android打包
 ```
 
-## IOS打包
-```
-react-native bundle --entry-file index.ios.js --bundle-output ./ios/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false
+## Useage
+>please run it after npm run setup AppName
+
+```	
+	mkdir ex && cd ./ex && react-native init AppName
+	mv ./AppName/ios ../ios && mv ./AppName/android ../android && cd ../ && rm -fr ex
+	npm run new
 ```
 
-## Android打包
+>please check the ./ex/AppName/package.json, react && react-native version, to modify ./package.json
+
+## Android-Step-Once
 
 ### 生成签名：
 
@@ -84,30 +97,3 @@ android {
 }
 ...
 ```
-
-- 在跟目录下，运行指令
-```
-react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
-```
-
-### 打包
-
-- 在android 文件夹下运行
-```
-gradlew assembleRelease
-```
-
-- 以上就构建成功，文件放在android/app/build/outputs/apk/下面
-
-### 初始化
->please run it after npm run setup AppName
-
-```
-	
-	mkdir ex && cd ./ex && react-native init AppName
-	mv ./AppName/ios ../ios && mv ./AppName/android ../android && cd ../ && rm -fr ex
-	npm run new
-	
-```
-
->please check the ./ex/AppName/package.json, react && react-native version, to modify ./package.json
