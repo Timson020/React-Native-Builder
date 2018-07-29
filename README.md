@@ -38,12 +38,15 @@
 ```
 
 ## Useage
->please run it after npm run setup AppName
 
-```	
-	mkdir ex && cd ./ex && react-native init AppName
-	mv ./AppName/ios ../ios && mv ./AppName/android ../android && cd ../ && rm -fr ex
-	npm run new
+```
+	npm i babel-cli -g
+
+	git clone https://github.com/Timson020/React-Native-Builder.git
+
+	cd ./React-Native-Builder
+	
+	npm run setup AppName
 ```
 
 >please check the ./ex/AppName/package.json, react && react-native version, to modify ./package.json

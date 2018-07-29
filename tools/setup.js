@@ -80,11 +80,11 @@ async function start() {
 
 	fs.renameSync(`${root_path}`, `${new_root_path}`)
 
-	console.info('\x1B[32m', '----- success, It is all complete -----')
-	console.info('\x1B[33m', '***** please run step by step on cmd *****')
-	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `>>>>>>> mkdir ex && cd ./ex && react-native init ${appName}`)
-	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `>>>>>>> mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd ../ && rm -fr ex`)
-	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', '>>>>>>> npm run new')
+	console.info('\x1B[32m', '----- success, It is all complete -----\n\n')
+	console.info('\x1B[33m', '***** please run step by step on cmd *****\n')
+	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `>>>>>>> mkdir Ex && cd ./Ex && react-native init ${appName}\n`)
+	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `>>>>>>> mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd ../ && rm -fr Ex\n`)
+	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', '>>>>>>> npm run new\n')
 	console.info('\x1B[40m\x1B[90m%s\x1B[39m\x1B[49m', `!!!!! please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
 }
 
