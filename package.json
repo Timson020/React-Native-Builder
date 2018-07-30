@@ -12,7 +12,7 @@
     "r": "node ./tools/generator/index.js r",
     "c": "node ./tools/generator/index.js c",
     "setup": "rm -fr package-lock.json && rm -fr yarn.lock && rm -fr .git && npm i && babel-node ./tools/setup.js",
-    "new": "rm -fr package-lock.json && rm -fr yarn.lock && npm i react@latest react-native@latest -S && npm i babel-preset-react-native@latest -D",
+    "new": "rm -fr package-lock.json && rm -fr yarn.lock && npm i react@latest react-native@latest -S && npm i babel-preset-react-native@5 -D",
     "iosBundle": "react-native bundle --entry-file index.js --bundle-output ./ios/index.jsbundle --platform ios --assets-dest ./ios/bundle --dev false",
     "androidBundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.bundle --assets-dest android/app/src/main/res/",
     "androidBuild": "cd ./android && ./gradlew assembleRelease"
