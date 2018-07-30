@@ -1,8 +1,9 @@
+import { Iterable, fromJS } from 'immutable'
 import { AsyncStorage } from 'react-native'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { createLogger } from 'redux-logger'
 import { createTransform, persistStore, persistReducer } from 'redux-persist'
-import { Iterable, fromJS } from 'immutable'
+
 import reducers from '../reducers'
 
 // reduer---log
@@ -44,9 +45,7 @@ const reducer = persistReducer({
 	storage: AsyncStorage,
 	// 转换
 	transforms: [immutableTransform],
-
-	throttle: 1000,
-
+	// 开发环境下为true
 	debug: true,
 }, reducers)
 
