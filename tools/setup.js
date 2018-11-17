@@ -1,4 +1,3 @@
-// import
 import fs from 'fs'
 // import path from 'path'
 
@@ -86,7 +85,6 @@ async function start() {
 	console.info('\x1B[40m', `>>>>>>> mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd .. && rm -fr Ex\n`)
 	console.info('\x1B[40m', '>>>>>>> npm run new\n')
 	console.info('\x1B[40m', `!!!!! please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
-
 }
 
 start()
