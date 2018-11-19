@@ -45,6 +45,8 @@
 	git clone https://github.com/Timson020/React-Native-Builder.git
 
 	cd ./React-Native-Builder
+
+	<!-- 先修改一下 .babelrc 文件 把 "module:metro-react-native-babel-preset" 替换成 "env" setup成功之后 修改回来 -->
 	
 	npm run setup AppName
 ```
