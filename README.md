@@ -22,7 +22,7 @@
 ||routes|页面|
 |tools||命令工具库|
 |.eslintrc||eslint 规范|
-|.eslintrc||babel 解析器|
+|.babelrc||babel 解析器|
 
 ## 命令
 ```
