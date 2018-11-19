@@ -81,8 +81,7 @@ async function start() {
 
 	console.info('\x1B[32m', '----- success, It is all complete -----\n\n')
 	console.info('\x1B[33m', '***** please run step by step on cmd *****\n')
-	console.info('\x1B[40m', `>>>>>>> mkdir Ex && cd ./Ex && react-native init ${appName}\n`)
-	console.info('\x1B[40m', `>>>>>>> mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd .. && rm -fr Ex\n`)
+	console.info('\x1B[40m', `>>>>>>> mkdir Ex && cd ./Ex && react-native init ${appName} && mv ./${appName}/ios ../ios && mv ./${appName}/android ../android && cd .. && rm -fr Ex\n`)
 	console.info('\x1B[40m', '>>>>>>> npm run new\n')
 	console.info('\x1B[40m', `!!!!! please check the ./${appName}/package.json, react && react-native version, to modify ./package.json`)
 }
