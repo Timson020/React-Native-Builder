@@ -8,7 +8,7 @@
 - [X] react-native
 - [X] redux
 - [X] immutable
-- [X] react-native-router-flux
+- [X] react-navigation
 
 ## 简单的目录说明
 
@@ -49,6 +49,8 @@
 	<!-- 先修改一下 .babelrc 文件 把 "module:metro-react-native-babel-preset" 替换成 "env" setup成功之后 修改回来 -->
 	
 	npm run setup AppName
+
+	react-native link react-native-gesture-handler
 ```
 
 >please check the ./ex/AppName/package.json, react && react-native version, to modify ./package.json

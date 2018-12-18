@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TouchableOpacity, Text } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -10,10 +10,10 @@ import { BaseComponent } from '../../components'
 import { } from './module'
 import { } from './components'
 
-class Template extends BaseComponent {
+class Setting extends BaseComponent {
 	static navigationOptions = ({ navigation }) => {
 		return {
-			title: 'Template',
+			title: '设置',
 			headerStyle: {
 				backgroundColor: '#f4511e',
 			},
@@ -22,10 +22,9 @@ class Template extends BaseComponent {
 				fontWeight: 'bold',
 			},
 			headerBackTitle: null,
+			headerLeft: <TouchableOpacity style={{ marginLeft: Utils.fontRem * 8 }} onPress={() => navigation.pop()}><Text style={styles.headerText}>返回</Text></TouchableOpacity>,
 		}
 	};
-
-	static propTypes = {};
 
 	constructor(props) {
 		super(props)
@@ -47,4 +46,4 @@ const styles = StyleSheet.create({
 
 export default connect(state => ({
 	user: state.User.toJSON(),
-}))(Template)
+}))(Setting)

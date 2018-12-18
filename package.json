@@ -22,7 +22,7 @@
     "prop-types": "15.6.2",
     "react": "16.6.1",
     "react-native": "0.57.5",
-    "react-native-router-flux": "3.43.0",
+    "react-navigation": "3.0.0",
     "react-redux": "5.1.1",
     "redux": "4.0.1",
     "redux-logger": "3.0.6",

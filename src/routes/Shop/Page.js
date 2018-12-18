@@ -1,6 +1,7 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TouchableOpacity, Text } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
+
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
@@ -10,10 +11,10 @@ import { BaseComponent } from '../../components'
 import { } from './module'
 import { } from './components'
 
-class Template extends BaseComponent {
+class Shop extends BaseComponent {
 	static navigationOptions = ({ navigation }) => {
 		return {
-			title: 'Template',
+			title: '商城',
 			headerStyle: {
 				backgroundColor: '#f4511e',
 			},
@@ -22,6 +23,8 @@ class Template extends BaseComponent {
 				fontWeight: 'bold',
 			},
 			headerBackTitle: null,
+			headerRight: null,
+			headerLeft: <TouchableOpacity style={{ marginLeft: Utils.fontRem * 8 }} onPress={() => navigation.pop()}><Text>返回</Text></TouchableOpacity>,
 		}
 	};
 
@@ -47,4 +50,4 @@ const styles = StyleSheet.create({
 
 export default connect(state => ({
 	user: state.User.toJSON(),
-}))(Template)
+}))(Shop)

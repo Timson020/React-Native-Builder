@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import { Actions } from 'react-native-router-flux'
 
 class BaseComponent extends Component {
 	constructor(props) {
@@ -8,7 +7,7 @@ class BaseComponent extends Component {
 	}
 
 	loadding() {
-		console.info(Actions)
+		
 	}
 
 	stoping() {

@@ -5,9 +5,7 @@ import PropTypes from 'prop-types'
 import { Utils } from '../../common'
 
 class Template extends Component {
-	static propTypes = {
-
-	}
+	static propTypes = {};
 
 	constructor(props) {
 		super(props)

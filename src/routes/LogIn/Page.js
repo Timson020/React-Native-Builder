@@ -1,6 +1,5 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
-import { SafeAreaView } from 'react-navigation'
+import { StyleSheet, View } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
@@ -10,18 +9,10 @@ import { BaseComponent } from '../../components'
 import { } from './module'
 import { } from './components'
 
-class Template extends BaseComponent {
+class LogIn extends BaseComponent {
 	static navigationOptions = ({ navigation }) => {
 		return {
-			title: 'Template',
-			headerStyle: {
-				backgroundColor: '#f4511e',
-			},
-			headerTintColor: '#fff',
-			headerTitleStyle: {
-				fontWeight: 'bold',
-			},
-			headerBackTitle: null,
+			header: null,
 		}
 	};
 
@@ -34,7 +25,7 @@ class Template extends BaseComponent {
 
 	render() {
 		return (
-			<SafeAreaView style={styles.container} />
+			<View style={styles.container} />
 		)
 	}
 }
@@ -47,4 +38,4 @@ const styles = StyleSheet.create({
 
 export default connect(state => ({
 	user: state.User.toJSON(),
-}))(Template)
+}))(LogIn)
